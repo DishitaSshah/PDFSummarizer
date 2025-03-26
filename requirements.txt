@@ -1,0 +1,11 @@
+Flask
+PyPDF2
+python-dotenv
+google-generativeai
+pandas
+oauthlib
+requests
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+werkzeug

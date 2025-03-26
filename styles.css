@@ -1,0 +1,33 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #00aaff;
+}
+
+button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: white;
+    color: #00aaff;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}

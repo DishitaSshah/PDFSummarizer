@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>PDF Summarizer</h1>
+    
+    {% if user %}
+        <p>Welcome, {{ user }}</p>
+        <a href="{{ url_for('logout_user') }}" class="logout-btn">Logout</a>
+        
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf, .csv">
+            <button type="submit">Summarize</button>
+        </form>
+
+        {% if summary %}
+            <div class="summary-box">
+                <h2>Summary:</h2>
+                <p>{{ summary }}</p>
+            </div>
+        {% endif %}
+
+        <h2>Summarizer History</h2>
+        <ul>
+            {% for entry in history %}
+                <li><strong>{{ entry.file }}:</strong> {{ entry.summary }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <a href="{{ url_for('login') }}" class="login-btn">Login with Google</a>
+    {% endif %}
+</body>
+</html>
